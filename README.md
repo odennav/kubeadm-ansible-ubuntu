@@ -62,11 +62,10 @@
    sudo add-apt-repository --yes --update ppa:ansible/ansible
    sudo apt install ansible
    ```
-9. **Confirm IP addresses in Inventory file**
-   Edit values of aa, bb and cc with same values used in Vagrantfile.
 
 ### Using Ansible
 The bootstrap and k8s folders in this repository contain the Ansible scripts necessary to set up your servers with the required packages and applications.
+Edit values of aa, bb and cc with same values used in Vagrantfile.
 
 ### Bootstrapping Vagrant Nodes
    All nodes need to be bootstrapped.This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login
