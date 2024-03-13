@@ -65,10 +65,10 @@
 9. **Confirm IP addresses in Inventory file
    Edit values of aa, bb and cc with same values used in Vagrantfile.
 
-10. **Using Ansible**
-   The bootstrap and k8s folders in this repository contain the Ansible scripts necessary to set up your servers with the required packages and applications.
+**Using Ansible**
+The bootstrap and k8s folders in this repository contain the Ansible scripts necessary to set up your servers with the required packages and applications.
 
-## Bootstrapping Vagrant Nodes
+### Bootstrapping Vagrant Nodes
    All nodes need to be bootstrapped.This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login
    by the root user for security reasons.Once the bootstrap is complete, you will only be able to log in as odennav-admin.
 
@@ -88,7 +88,7 @@
    ansible-playbook bootstrap.yml --limit k8s_master,k8s_node
    ```
 
-## Setting up Kubernetes
+### Setting up Kubernetes Cluster
    Your kube nodes are now ready to have a Kubernetes cluster installed on them.
    Execute playbooks in this particular order:
 
