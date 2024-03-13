@@ -76,8 +76,9 @@ Edit values of aa, bb and cc with same values used in Vagrantfile.
    ssh -i /root/.ssh/id_rsa odennav-admin@<k8snode1-ip>
    ```  
    To return to devbuild, type "exit" and press "Enter" or use "Ctrl+D".
+   
    Confirm SSH access to k8snode2:
-    ```bash
+   ```bash
    ssh -i /root/.ssh/id_rsa odennav-admin@<k8snode2-ip>
    ```  
   
