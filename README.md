@@ -71,7 +71,7 @@ Edit values of aa, bb and cc with same values used in Vagrantfile.
    All nodes need to be bootstrapped.This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login
    by the root user for security reasons.Once the bootstrap is complete, you will only be able to log in as odennav-admin.
 
-   You can log in to k8snode1 or k8snode2 from devbuild using:   
+   Confirm SSH access to k8snode1:   
    ```bash
    ssh -i /root/.ssh/id_rsa odennav-admin@<k8snode1-ip>
    ```  
