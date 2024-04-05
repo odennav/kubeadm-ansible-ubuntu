@@ -9,7 +9,7 @@
    - k8snode1 
    - k8snode2
 
-   These servers are located in different subnets compared to your development machine (dev node):
+   These servers are located in different subnets compared to your development machine (ansible node):
    - devbuild
 
 ## Getting Started
@@ -22,41 +22,42 @@
    vagrant up
    ```
 
-2. **Logging into your dev node(devbuild)**
+2. **Login into your dev node(devbuild)**
    ```bash
    vagrant ssh devbuild
    ```
 
-3. **Changing the root password for devbuild**
+3. **Change the root password for devbuild**
    ```bash
    sudo passwd
    ```
-4. **Switching to a sudo user and using the new password**
+4. **Switch to sudo user and use the new password**
    ```bash
    su -
    ```
 
-5. **Updating the package manager and installing git**
+5. **Update the package manager and install git**
    ```bash
    apt update
    apt install git -y
    ```
 
-6. **Cloning the Repository**
+6. **Clone the Repository**
+   
    Download this repo to devbuild to get access to Ansible and bash scripts
    ```bash
    cd /
    git clone https://github.com/odennav/kubeadm-ansible-ubuntu.git
    cd kubeadm-ansible-ubuntu
    ```
-7. **Generating public/private keys**
+7. **Generate public/private keys**
    ```bash
    ssh-keygen -o -t rsa
    ```
    
    Once the key-pair is generated, manually copy public RSA key(id_rsa.pub) to all kube nodes(/root/.ssh/authorized_keys)
 
-8. **Installing Ansible in devbuild**
+8. **Install Ansible in devbuild**
    ```bash
    sudo apt install software-properties-common
    sudo add-apt-repository --yes --update ppa:ansible/ansible
