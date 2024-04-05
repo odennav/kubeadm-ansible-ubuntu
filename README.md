@@ -22,7 +22,7 @@
    vagrant up
    ```
 
-2. **Login into your dev node(devbuild)**
+2. **Login into your ansible node(devbuild)**
    ```bash
    vagrant ssh devbuild
    ```
