@@ -16,7 +16,9 @@
    Follow these steps to implement the setup:
 
 1. **Provision VMs**
+   
    Change aa, bb, cc and dd located at last octet of ip addresses assigned to each node in Vagrantfile.
+   
    Now you can provision your VMs
    ```bash
    vagrant up
@@ -36,7 +38,7 @@
    su -
    ```
 
-5. **Update the package manager and install git**
+5. **Update the package manager and install Git**
    ```bash
    apt update
    apt install git -y
@@ -66,17 +68,19 @@
 
 ### Using Ansible
 The bootstrap and k8s folders in this repository contain the Ansible scripts necessary to set up your servers with the required packages and applications.
+
 Edit values of aa, bb and cc with same values used in Vagrantfile.
 
 ### Bootstrapping Vagrant Nodes
    All nodes need to be bootstrapped.This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login
-   by the root user for security reasons.Once the bootstrap is complete, you will only be able to log in as odennav-admin.
+   by the root user for security reasons.
+   Once the bootstrap is complete, you will only be able to log in as odennav-admin.
 
    Confirm SSH access to k8snode1:   
    ```bash
    ssh -i /root/.ssh/id_rsa odennav-admin@<k8snode1-ip>
    ```  
-   To return to devbuild, type "exit" and press "Enter" or use "Ctrl+D".
+   To return to devbuild, type `exit` and press `Enter` or use `Ctrl+D`
    
    Confirm SSH access to k8snode2:
    ```bash
@@ -91,6 +95,7 @@ Edit values of aa, bb and cc with same values used in Vagrantfile.
 
 ### Setting up Kubernetes Cluster
    Your kube nodes are now ready to have a Kubernetes cluster installed on them.
+   
    Execute playbooks in this particular order:
 
    ```bash
