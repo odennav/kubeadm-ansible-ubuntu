@@ -1,5 +1,5 @@
-## Automating Deployment of a Kubernetes Cluster with Kubeadm
-   Utilizing Ansible and Vagrant to rapidly deploy a Kubernetes cluster in Test environment.
+## Rapid Deployment of a Kubernetes Cluster with Ansible
+   Utilize Ansible and Vagrant to rapidly deploy a Kubernetes cluster in Test environment.
  
 
 
