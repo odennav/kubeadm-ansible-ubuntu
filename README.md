@@ -89,7 +89,7 @@ Edit values of aa, bb and cc with same values used in Vagrantfile.
   
    Now you can now bootstrap them:
    ```bash
-   cd ../bootstrap
+   cd kubeadm-ansible-ubuntu/bootstrap/
    ansible-playbook bootstrap.yml --limit k8s_master,k8s_node
    ```
 
