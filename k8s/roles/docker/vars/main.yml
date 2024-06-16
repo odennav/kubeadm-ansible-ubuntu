@@ -8,6 +8,10 @@ docker_dependencies:
 - curl
 docker_packages:
 - docker-ce
-docker_url_apt_key: "https://download.docker.com/linux/debian/gpg"
-docker_repository: "deb [arch=amd64] https://download.docker.com/linux/debian bullseye stable"
+- docker-ce-cli
+- containerd.io
+- docker-buildx-plugin
+- docker-compose-plugin
+docker_url_apt_key: "https://download.docker.com/linux/ubuntu/gpg"
+docker_repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
 
