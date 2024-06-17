@@ -13,46 +13,37 @@
    - devbuild
 
 ## Getting Started
+
    Follow these steps to implement the setup:
 
    **Provision VMs**
    
-   Change aa, bb, cc and dd located at last octet of ip addresses assigned to each node in Vagrantfile.
-   
-   Now you can provision your VMs
+   Login into your ansible node
    ```bash
    vagrant up
-   ```
-
-   **Login into your ansible node**
-   ```bash
    vagrant ssh devbuild
    ```
 
-   **Change the root password for ansible node**
+   Change the root password for ansible node and switch to root
    ```bash
    sudo passwd
+   su - 
    ```
-   **Switch to sudo user and use the new password**
-   ```bash
-   su -
-   ```
-
-   **Update the package manager and install Git**
+  
+   Update the package manager and install Git
    ```bash
    apt update
    apt install git -y
    ```
 
-   **Clone the Repository**
-   
-   Download this repo to devbuild to get access to Ansible and bash scripts
+   Download this repository to `devbuild` machine, access ansible and bash scripts
    ```bash
    cd /
    git clone https://github.com/odennav/kubeadm-ansible-ubuntu.git
    cd kubeadm-ansible-ubuntu
    ```
-   **Generate public/private keys**
+
+   Generate SSH public/private key pair
    ```bash
    ssh-keygen -o -t rsa
    ```
