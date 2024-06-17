@@ -42,7 +42,7 @@
 
    Generate SSH public/private key pair
    ```bash
-   ssh-keygen -o -t rsa
+   ssh-keygen -t rsa -b 4096
    ```
    
    Once the RSA key-pair is generated, manually copy the public key `id_rsa.pub` to `/root/.ssh/authorized_keys` file in kube nodes.
