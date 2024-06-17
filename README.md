@@ -74,8 +74,6 @@ The bootstrap and k8s folders in this repository contain the Ansible scripts nec
 
    All nodes will be bootstrapped using Ansible.
 
-   This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login by the root user for security reasons.
-
    Bootstrap the master node
    ```bash
    cd kubeadm-ansible-ubuntu/bootstrap/
