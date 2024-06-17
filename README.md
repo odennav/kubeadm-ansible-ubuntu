@@ -1,12 +1,12 @@
 ## Rapid Deployment of a Kubernetes Cluster with Ansible
    Utilize Ansible and Vagrant to rapidly deploy a Kubernetes cluster in a Test environment.
  
-   The Kubernetes cluster we will create is shown in the diagram above. It consists of three vagrant nodes(kube nodes):
+   The Kubernetes cluster we will create is shown in the diagram above. It consists of three vagrant nodes `kube nodes`
    - k8smaster
    - k8snode1 
    - k8snode2
 
-   These servers are located in different subnets compared to your development machine (ansible node):
+   These servers are located in different subnets compared to your development machine `ansible node`
    - devbuild
 
 ## Getting Started
@@ -73,7 +73,7 @@ The bootstrap and k8s folders in this repository contain the Ansible scripts nec
    ansible-playbook bootstrap.yml --limit k8s_node
    ```
    
-   Once the bootstrap is complete, you can log in as odennav-admin.
+   Once the bootstrap is complete, you can log in as `odennav-admin`.
 
    Confirm SSH access to master node
    ```bash
