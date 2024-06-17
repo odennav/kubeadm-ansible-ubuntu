@@ -57,7 +57,7 @@
    ssh-keygen -o -t rsa
    ```
    
-   Once the key-pair is generated, manually copy public RSA key(id_rsa.pub) to all kube nodes(/root/.ssh/authorized_keys)
+   Once the RSA key-pair is generated, manually copy the public key `id_rsa.pub` to `/root/.ssh/authorized_keys` file in kube nodes.
 
    **Install Ansible in devbuild**
    ```bash
