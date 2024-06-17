@@ -1,9 +1,6 @@
 ## Rapid Deployment of a Kubernetes Cluster with Ansible
    Utilize Ansible and Vagrant to rapidly deploy a Kubernetes cluster in a Test environment.
  
-
-
-## Kubernetes Cluster Setup
    The Kubernetes cluster we will create is shown in the diagram above. It consists of three vagrant nodes(kube nodes):
    - k8smaster
    - k8snode1 
