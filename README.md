@@ -45,13 +45,13 @@
    ssh-keygen -t rsa -b 4096
    ```
    
-   Once the RSA key-pair is generated, manually copy the public key `id_rsa.pub` to `/root/.ssh/authorized_keys` file in kube nodes.
+   Once the RSA key-pair is generated, manually copy the public key `id_rsa.pub` to the `/root/.ssh/authorized_keys` file in all kube nodes.
 
    **Install Ansible in devbuild**
    ```bash
-   sudo apt install software-properties-common
+   sudo apt install -y software-properties-common
    sudo add-apt-repository --yes --update ppa:ansible/ansible
-   sudo apt install ansible
+   sudo apt install -y ansible
    ```
 
 
