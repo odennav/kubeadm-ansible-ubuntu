@@ -15,7 +15,7 @@
 ## Getting Started
    Follow these steps to implement the setup:
 
-1. **Provision VMs**
+   **Provision VMs**
    
    Change aa, bb, cc and dd located at last octet of ip addresses assigned to each node in Vagrantfile.
    
@@ -24,27 +24,27 @@
    vagrant up
    ```
 
-2. **Login into your ansible node(devbuild)**
+   **Login into your ansible node**
    ```bash
    vagrant ssh devbuild
    ```
 
-3. **Change the root password for devbuild**
+   **Change the root password for ansible node**
    ```bash
    sudo passwd
    ```
-4. **Switch to sudo user and use the new password**
+   **Switch to sudo user and use the new password**
    ```bash
    su -
    ```
 
-5. **Update the package manager and install Git**
+   **Update the package manager and install Git**
    ```bash
    apt update
    apt install git -y
    ```
 
-6. **Clone the Repository**
+   **Clone the Repository**
    
    Download this repo to devbuild to get access to Ansible and bash scripts
    ```bash
@@ -52,47 +52,58 @@
    git clone https://github.com/odennav/kubeadm-ansible-ubuntu.git
    cd kubeadm-ansible-ubuntu
    ```
-7. **Generate public/private keys**
+   **Generate public/private keys**
    ```bash
    ssh-keygen -o -t rsa
    ```
    
    Once the key-pair is generated, manually copy public RSA key(id_rsa.pub) to all kube nodes(/root/.ssh/authorized_keys)
 
-8. **Install Ansible in devbuild**
+   **Install Ansible in devbuild**
    ```bash
    sudo apt install software-properties-common
    sudo add-apt-repository --yes --update ppa:ansible/ansible
    sudo apt install ansible
    ```
 
-### Using Ansible
+
 The bootstrap and k8s folders in this repository contain the Ansible scripts necessary to set up your servers with the required packages and applications.
 
-Edit values of aa, bb and cc with same values used in Vagrantfile.
 
 ### Bootstrapping Vagrant Nodes
-   All nodes need to be bootstrapped.This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login
-   by the root user for security reasons.
-   Once the bootstrap is complete, you will only be able to log in as odennav-admin.
 
-   Confirm SSH access to k8snode1:   
+   All nodes will be bootstrapped using Ansible.
+
+   This process involves updating the OS, creating a non-root user, and setting up SSH to prevent remote login by the root user for security reasons.
+
+   Bootstrap the master node
    ```bash
-   ssh -i /root/.ssh/id_rsa odennav-admin@<k8snode1-ip>
+   cd kubeadm-ansible-ubuntu/bootstrap/
+   ansible-playbook bootstrap.yml --limit k8s_master
+   ```
+
+   Bootstrap the worker nodes
+   ```bash
+   ansible-playbook bootstrap.yml --limit k8s_node
+   ```
+   
+   Once the bootstrap is complete, you can log in as odennav-admin.
+
+   Confirm SSH access to master node
+   ```bash
+   ssh -i /root/.ssh/id_rsa odennav-admin@192.168.50.2
+   ```
+   Confirm SSH access to 1st worker node   
+   ```bash
+   ssh -i /root/.ssh/id_rsa odennav-admin@192.168.50.3
    ```  
    To return to devbuild, type `exit` and press `Enter` or use `Ctrl+D`
    
-   Confirm SSH access to k8snode2:
+   Confirm SSH access to 2nd worker node
    ```bash
-   ssh -i /root/.ssh/id_rsa odennav-admin@<k8snode2-ip>
+   ssh -i /root/.ssh/id_rsa odennav-admin@192.168.50.4
    ```  
   
-   Now you can now bootstrap them:
-   ```bash
-   cd kubeadm-ansible-ubuntu/bootstrap/
-   ansible-playbook bootstrap.yml --limit k8s_master,k8s_node
-   ```
-
 ### Setting up Kubernetes Cluster
    Your kube nodes are now ready to have a Kubernetes cluster installed on them.
    
