@@ -1,5 +1,5 @@
 ## Rapid Deployment of a Kubernetes Cluster with Ansible
-   Utilize Ansible and Vagrant to rapidly deploy a Kubernetes cluster in Test environment.
+   Utilize Ansible and Vagrant to rapidly deploy a Kubernetes cluster in a Test environment.
  
 
 
