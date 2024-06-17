@@ -1,6 +1,6 @@
 
 k8s_pod_network: "192.168.0.0/16"
-k8s_control_plane_node_ip: "192.168.50.aa"
+k8s_control_plane_node_ip: "192.168.50.2"
 k8s_user: "odennav-admin"
 k8s_user_home: "/home/{{ k8s_user }}"
 k8s_join_file: "join-k8s-command"
