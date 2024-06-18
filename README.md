@@ -77,17 +77,17 @@ The bootstrap and k8s folders in this repository contain the Ansible scripts nec
 
    Confirm SSH access to master node
    ```bash
-   ssh -i /root/.ssh/id_rsa odennav-admin@192.168.50.2
+   ssh  odennav-admin@192.168.50.2
    ```
    Confirm SSH access to 1st worker node   
    ```bash
-   ssh -i /root/.ssh/id_rsa odennav-admin@192.168.50.3
+   ssh  odennav-admin@192.168.50.3
    ```  
    To return to devbuild, type `exit` and press `Enter` or use `Ctrl+D`
    
    Confirm SSH access to 2nd worker node
    ```bash
-   ssh -i /root/.ssh/id_rsa odennav-admin@192.168.50.4
+   ssh  odennav-admin@192.168.50.4
    ```  
   
 ### Setting up Kubernetes Cluster
@@ -108,6 +108,11 @@ The bootstrap and k8s folders in this repository contain the Ansible scripts nec
 
    Your Kubernetes cluster is ready.
 
+
+   ![](https://github.com/odennav/kubeadm-ansible-ubuntu/blob/main/docs/cluster.png)
+
+
+-----
 
    Enjoy!
 
