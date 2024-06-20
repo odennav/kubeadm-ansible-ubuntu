@@ -1,0 +1,17 @@
+docker_dependencies:
+- ca-certificates
+- gnupg
+- gnupg2
+- gnupg-agent
+- software-properties-common
+- apt-transport-https
+- curl
+docker_packages:
+- docker-ce
+- docker-ce-cli
+- containerd.io
+- docker-buildx-plugin
+- docker-compose-plugin
+docker_url_apt_key: "https://download.docker.com/linux/ubuntu/gpg"
+docker_repository: "deb [arch=amd64] https://download.docker.com/linux/ubuntu jammy stable"
+
