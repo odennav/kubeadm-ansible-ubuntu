@@ -96,7 +96,7 @@ The bootstrap and k8s folders in this repository contain the Ansible scripts nec
    Execute playbooks in this particular order:
 
    ```bash
-   cd ../k8s
+   cd ../kubeadm
    ansible-playbook k8s.yml  --limit k8s_master
    ansible-playbook k8s.yml  --limit k8s_node
    ```
